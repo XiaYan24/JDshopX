@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:src="@mipmap/icon_back3" />
+
+        <LinearLayout
+            android:id="@+id/details_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="详情"
+                android:textColor="#767676"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/details_view"
+                android:layout_width="60dp"
+                android:layout_height="3dp"
+                android:background="#F33F3F"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/introduce_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
+            android:layout_toLeftOf="@id/details_ll"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="商品"
+                android:textColor="#767676"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/introduce_view"
+                android:layout_width="60dp"
+                android:layout_height="3dp"
+                android:background="#F33F3F" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/comment_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@id/details_ll"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="评价"
+                android:textColor="#767676"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/comment_view"
+                android:layout_width="60dp"
+                android:layout_height="3dp"
+                android:background="#F33F3F"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/more_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/more_icon3" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E8E8E8" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container_vp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C71523" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/custom_service_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/cussvc_icon"
+            android:gravity="center"
+            android:padding="2dp"
+            android:paddingTop="5dp"
+            android:text="客服"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/store_icon"
+            android:gravity="center"
+            android:padding="2dp"
+            android:paddingTop="5dp"
+            android:text="店铺"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/fav_icon"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:text="关注"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/add2shopcar"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="#FC253E"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="add2ShopCar"
+            android:padding="3dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="加入购物车"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,25 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+<!--轮播图-->
+    <declare-styleable name="FlyBanner">
+        <attr name="points_visibility" format="boolean" />
+        <attr name="points_position" format="enum">
+            <enum name="CENTER" value="0" />
+            <enum name="LEFT" value="1" />
+            <enum name="RIGHT" value="2" />
+        </attr>
+        <attr name="points_container_background" format="reference|color" />
+    </declare-styleable>
+
+</resources>

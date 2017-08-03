@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="122dp"
+    android:layout_height="155dp"
+    android:background="@color/white"
+    xmlns:zhy="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+        <com.lx.jdshop.UI.RoundImageView
+            android:id="@+id/image_iv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            zhy:borderRadius="6dp"
+            zhy:type="round"
+            />
+        <TextView
+            android:id="@+id/nowprice_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="#F00"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/normalprice_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#9B9B9B"
+            android:textStyle="italic"
+            android:textSize="14sp" />
+
+</LinearLayout>
+

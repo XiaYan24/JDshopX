@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- 头部 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/activity_title">
+        <!---搜索-->
+        <TextView
+            android:id="@+id/et_search_alliance"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="42dp"
+            android:background="@drawable/bg_edit_text"
+            android:drawableLeft="@mipmap/icon_search"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:hint="@string/search_merchant"
+            android:maxLines="1"
+            android:padding="4dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/id_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/ic_scan_dark" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FAFAFA"
+        android:orientation="horizontal" >
+
+        <ListView
+            android:id="@+id/top_lv"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:cacheColorHint="#0000"
+            android:listSelector="#0000"
+            android:scrollbars="none" />
+
+        <include layout="@layout/sub_category_view" />
+    </LinearLayout>
+
+</LinearLayout>

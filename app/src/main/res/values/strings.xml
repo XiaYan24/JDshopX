@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">JD商城</string>
+    <string name="user_name">请输入账号</string>
+    <string name="user_pass">请输入密码</string>
+    <string name="forget_pass">请联系管理员哥哥</string>
+    <string name="search_merchant">搜索感兴趣的商品</string>
+    <string name="search_hint">搜索感兴趣的商品</string>
+</resources>

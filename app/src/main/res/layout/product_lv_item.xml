@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="horizontal">
+
+        <image.SmartImageView
+            android:id="@+id/product_iv"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp" />
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/product_iv"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@id/product_iv"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:lines="2"
+            android:textColor="#2E2E2E"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/commrate_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/product_iv"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/product_iv"
+            android:textColor="#81838E"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/commrate_tv"
+            android:layout_alignLeft="@id/commrate_tv"
+            android:layout_marginBottom="8dp"
+            android:textColor="#F23030"
+            android:textSize="19sp" />
+
+        <ImageView
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:layout_alignBottom="@id/product_iv"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/icon_shop_car" />
+
+    </RelativeLayout>
+
+</LinearLayout>
