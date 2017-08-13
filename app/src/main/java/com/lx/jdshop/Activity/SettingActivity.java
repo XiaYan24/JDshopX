@@ -38,6 +38,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
 
     @Override
     protected void setContentView() {
+        //设置布局
         setContentView(R.layout.activity_setting);
     }
 
