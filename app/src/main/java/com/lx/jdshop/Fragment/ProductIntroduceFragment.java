@@ -143,6 +143,8 @@ public class ProductIntroduceFragment extends BaseFragment implements AdapterVie
      */
     private void translateAdBannerItem(final List<String> imageUrList) {
         if (imageUrList != null && imageUrList.size() != 0) {
+            if (getActivity() == null)
+                return;
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -155,6 +157,8 @@ public class ProductIntroduceFragment extends BaseFragment implements AdapterVie
                     mAdIndicator.setText((currentItem + 1) + "/" + imageUrList.size());
                 }
             });
+        }else{
+            mAdVp.setVisibility(View.GONE);
         }
     }
 

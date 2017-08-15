@@ -13,8 +13,8 @@ import android.widget.Toast;
 
 import com.lx.jdshop.Activity.ProductDetailsActivity;
 import com.lx.jdshop.Adapter.RecommendAdapter;
-import com.lx.jdshop.Adapter.RvListener;
-import com.lx.jdshop.Adapter.SceondKillAdapter;
+
+import com.lx.jdshop.Adapter.SecondKillAdapter;
 import com.lx.jdshop.Bean.Banner;
 import com.lx.jdshop.Bean.RRecommndProduct;
 import com.lx.jdshop.Bean.RSecondKill;
@@ -42,9 +42,9 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
     private FlashView mFv_banner;
     private SmartImageView mAd2Iv;
     private RecyclerView rlView;
-    private SceondKillAdapter killAdapter;
     private GridView mRecommend;
     private RecommendAdapter recommendAdapter;
+    private SecondKillAdapter secondKillAdapter;
 
     @Override
     protected void handlerMessage(Message msg) {
@@ -70,14 +70,18 @@ public class HomeFragment extends BaseFragment implements AdapterView.OnItemClic
         FixedViewUtil.setGridViewHeightBasedOnChildren(mRecommend,2);
     }
 
-    private void handleSecondKill(List<RSecondKill> obj) {
-        killAdapter = new SceondKillAdapter(getActivity(), obj, new RvListener() {
+    private void handleSecondKill(List<RSecondKill> list) {
+        secondKillAdapter = new SecondKillAdapter(getActivity(),list);
+        rlView.setAdapter(secondKillAdapter);
+        secondKillAdapter.setOnItemClickListener(new SecondKillAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(int id, int position) {
-                Toast.makeText(getActivity(),position+"", Toast.LENGTH_SHORT).show();
+            public void onItemClick(View view, int position) {
+                long pId = secondKillAdapter.getItemId(position);
+                Intent intent = new Intent(getActivity(), ProductDetailsActivity.class);
+                intent.putExtra(TODETAILSKEY, pId);
+                startActivity(intent);
             }
         });
-        rlView.setAdapter(killAdapter);
     }
 
     private void handleLoadAd2Result(List<Banner> banners) {
