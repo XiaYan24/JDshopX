@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 
 import com.alibaba.fastjson.JSON;
-import com.lx.jdshop.Bean.RLoginResult;
+import com.lx.jdshop.Bean.RLoginResultX;
 import com.lx.jdshop.Bean.RResult;
 import com.lx.jdshop.DB.UserDao;
 import com.lx.jdshop.Listenter.IModeChaneListener;
@@ -116,7 +116,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         RResult obj = (RResult) msg.obj;
         if (obj.isSuccess()) {
             //将用户的信息保存到Application中
-            RLoginResult bean = JSON.parseObject(obj.getResult(),RLoginResult.class);
+            RLoginResultX bean = JSON.parseObject(obj.getResult(),RLoginResultX.class);
             ((MyApplication)getApplication()).setRLoginResult(bean);
 
             String username = usernameWrapper.getEditText().getText().toString();

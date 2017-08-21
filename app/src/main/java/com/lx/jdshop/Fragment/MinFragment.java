@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lx.jdshop.Activity.SettingActivity;
-import com.lx.jdshop.Bean.RLoginResult;
+import com.lx.jdshop.Bean.RLoginResultX;
 import com.lx.jdshop.MyApplication;
 import com.lx.jdshop.R;
 import com.lx.jdshop.Util.ActivityUtil;
@@ -45,7 +45,7 @@ public class MinFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     protected void initData() {
-        RLoginResult mLoginResult =  application.mRLoginResult;
+        RLoginResultX mLoginResult =  application.mRLoginResult;
         tv_userName.setText(mLoginResult.getUserName());
     }
 
