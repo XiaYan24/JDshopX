@@ -7,17 +7,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lx.jdshop.Activity.SettingActivity;
-import com.lx.jdshop.Bean.RLoginresult;
+import com.lx.jdshop.Bean.RLoginResult;
 import com.lx.jdshop.MyApplication;
 import com.lx.jdshop.R;
 import com.lx.jdshop.Util.ActivityUtil;
 
-
 /**
- * Created by Xia_焱 on 2017/7/19.
+ * Created by Xia_焱 on 2017/8/20.
  */
 
-public class MinFrament extends BaseFragment implements View.OnClickListener {
+public class MinFragment extends BaseFragment implements View.OnClickListener {
 
     private ImageView img_setting;
     private TextView tv_userName;
@@ -46,7 +45,7 @@ public class MinFrament extends BaseFragment implements View.OnClickListener {
 
     @Override
     protected void initData() {
-        RLoginresult mLoginResult =  application.mLoginResult;
+        RLoginResult mLoginResult =  application.mRLoginResult;
         tv_userName.setText(mLoginResult.getUserName());
     }
 

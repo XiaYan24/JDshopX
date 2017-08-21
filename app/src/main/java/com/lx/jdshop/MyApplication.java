@@ -2,7 +2,7 @@ package com.lx.jdshop;
 
 import android.app.Application;
 
-import com.lx.jdshop.Bean.RLoginresult;
+import com.lx.jdshop.Bean.RLoginResult;
 
 
 /**
@@ -11,14 +11,14 @@ import com.lx.jdshop.Bean.RLoginresult;
 
 public class MyApplication extends Application {
 
-    public RLoginresult mLoginResult;
+    public RLoginResult mRLoginResult;
 
     @Override
     public void onCreate() {
         super.onCreate();
     }
 
-    public  void setRLoginResult(RLoginresult bean) {
-        this.mLoginResult = bean;
+    public void setRLoginResult(RLoginResult bean) {
+        mRLoginResult=bean;
     }
 }

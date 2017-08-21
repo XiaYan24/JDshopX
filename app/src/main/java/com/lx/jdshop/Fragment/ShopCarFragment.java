@@ -5,12 +5,11 @@ import android.view.View;
 
 import com.lx.jdshop.R;
 
-
 /**
- * Created by Xia_焱 on 2017/7/19.
+ * Created by Xia_焱 on 2017/8/20.
  */
 
-public class ShopCarFrament extends BaseFragment {
+public class ShopCarFragment extends BaseFragment {
 
     @Override
     public View initView(LayoutInflater inflater) {
@@ -19,4 +18,3 @@ public class ShopCarFrament extends BaseFragment {
     }
 
 }
-

@@ -271,7 +271,7 @@ public class ProductListActivity extends BaseActivity implements IModeChaneListe
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        long pId = brandAdapter.getItemId(position);
+        long pId = productListAdapter.getItemId(position);
         Intent intent=new Intent(this, ProductDetailsActivity.class);
         intent.putExtra(TODETAILSKEY, pId);
         startActivity(intent);

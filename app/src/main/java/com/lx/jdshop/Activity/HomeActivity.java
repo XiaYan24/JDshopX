@@ -7,8 +7,8 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.lx.jdshop.Fragment.CategoryFragment;
 import com.lx.jdshop.Fragment.HomeFragment;
-import com.lx.jdshop.Fragment.MinFrament;
-import com.lx.jdshop.Fragment.ShopCarFrament;
+import com.lx.jdshop.Fragment.MinFragment;
+import com.lx.jdshop.Fragment.ShopCarFragment;
 import com.lx.jdshop.R;
 
 
@@ -19,8 +19,8 @@ import com.lx.jdshop.R;
 public class HomeActivity extends BaseActivity implements BottomNavigationBar.OnTabSelectedListener {
     private BottomNavigationBar bottomNavigationBar;
     private HomeFragment homeFragment;
-    private ShopCarFrament shopCarFrament;
-    private MinFrament minFrament;
+    private ShopCarFragment shopCarFragment;
+    private MinFragment minFragment;
     private CategoryFragment categoryFragment;
     @Override
     protected void setContentView() {
@@ -79,16 +79,16 @@ public class HomeActivity extends BaseActivity implements BottomNavigationBar.On
                 transaction.replace(R.id.layFrame, categoryFragment);
                 break;
             case 2:
-                if (shopCarFrament == null) {
-                    shopCarFrament = new ShopCarFrament();
+                if (shopCarFragment == null) {
+                    shopCarFragment = new ShopCarFragment();
                 }
-                transaction.replace(R.id.layFrame, shopCarFrament);
+                transaction.replace(R.id.layFrame, shopCarFragment);
                 break;
             case 3:
-                if (minFrament == null) {
-                    minFrament = new MinFrament();
+                if (minFragment == null) {
+                    minFragment = new MinFragment();
                 }
-                transaction.replace(R.id.layFrame, minFrament);
+                transaction.replace(R.id.layFrame, minFragment);
                 break;
             default:
                 break;

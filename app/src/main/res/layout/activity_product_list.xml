@@ -104,7 +104,7 @@
                 android:text="筛选"
                 android:textSize="15.3sp" />
         </LinearLayout>
-        <android.xys.jd.jdmax.UI.FlexiListView
+        <com.lx.jdshop.UI.FlexiListView
             android:id="@+id/product_lv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
