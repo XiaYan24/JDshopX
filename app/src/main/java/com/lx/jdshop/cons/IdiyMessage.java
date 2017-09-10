@@ -47,4 +47,25 @@ public class IdiyMessage {
     public static final int GET_COMMENT_ACTION=31;
     public static final int GET_COMMENT_ACTION_RESULT=32;
 
+    public static final int ADD2SHOPCAR_ACTION=33;
+    public static final int ADD2SHOPCAR_ACTION_RESULT=34;
+
+    public static final int SHOPCAR_LIST_ACTION=35;
+    public static final int SHOPCAR_LIST_ACTION_RESULT=36;
+
+    public static final int DELET_SHOPCAR_ACTION=37;
+    public static final int DELET_SHOPCAR_ACTION_RESULT=38;
+
+    public static final int GET_DEFAULT_RECEIVER_ACTION=39;
+    public static final int GET_DEFAULT_RECEIVER_ACTION_RESULT=40;
+
+    public static final int PROVINCE_ACTION=41;
+    public static final int PROVINCE_ACTION_RESULT=42;
+
+    public static final int CITY_ACTION=43;
+    public static final int CITY_ACTION_RESULT=44;
+
+    public static final int AREA_ACTION=45;
+    public static final int AREA_ACTION_RESULT=46;
+
 }

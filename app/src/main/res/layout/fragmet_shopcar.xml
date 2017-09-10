@@ -1,6 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F2F5"
+    android:orientation="vertical">
+
+  <include layout="@layout/activity_title"/>
+
+    <com.lx.jdshop.UI.FlexiListView
+        android:id="@+id/shop_car_lv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:cacheColorHint="#0000"
+        android:divider="@null"
+        android:dividerHeight="8dp"
+        android:listSelector="#0000"
+        android:scrollbars="none" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#F444" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#FFFF">
+
+        <CheckBox
+            android:id="@+id/all_cbx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:button="@drawable/shopcar_item_cbx_bg"
+            android:drawablePadding="6dp"
+            android:text="全选"
+            android:textColor="#7F7F7F"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/all_money_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/all_cbx"
+            android:text="总额: ￥ 0"
+            android:textColor="#F33F3F"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/settle_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="#CC0000"
+            android:clickable="true"
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="去结算(0)"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
 
 </LinearLayout>

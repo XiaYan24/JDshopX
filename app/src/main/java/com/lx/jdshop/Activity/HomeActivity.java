@@ -2,9 +2,11 @@ package com.lx.jdshop.Activity;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.widget.Toast;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.lx.jdshop.Fragment.BackHandledFragment;
 import com.lx.jdshop.Fragment.CategoryFragment;
 import com.lx.jdshop.Fragment.HomeFragment;
 import com.lx.jdshop.Fragment.MinFragment;
@@ -22,6 +24,8 @@ public class HomeActivity extends BaseActivity implements BottomNavigationBar.On
     private ShopCarFragment shopCarFragment;
     private MinFragment minFragment;
     private CategoryFragment categoryFragment;
+    private BackHandledFragment mBackHandedFragment;
+    private long exitTime = 0;
     @Override
     protected void setContentView() {
     setContentView(R.layout.activity_home);
@@ -104,5 +108,21 @@ public class HomeActivity extends BaseActivity implements BottomNavigationBar.On
     @Override
     public void onTabReselected(int position) {
 
+    }
+    @Override
+    public void onBackPressed() {
+        if (mBackHandedFragment == null || !mBackHandedFragment.onBackPressed()) {
+            if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
+                if ((System.currentTimeMillis() - exitTime) > 2000) {
+                    Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                    exitTime = System.currentTimeMillis();
+                } else {
+                    finish();
+                    super.onBackPressed();
+                }
+            } else {
+                getSupportFragmentManager().popBackStack(); //fragment 出栈
+            }
+        }
     }
 }

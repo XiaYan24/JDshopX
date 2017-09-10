@@ -1,33 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="15dp" >
+        android:layout_marginTop="15dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <!-- 用户 -->
 
-            <image.SmartImageView
+            <!--<image.SmartImageView-->
+            <!--android:id="@+id/icon_iv"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_marginLeft="10dp" />-->
+            <com.lx.jdshop.UI.RoundImageView
                 android:id="@+id/icon_iv"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="10dp"  />
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dp"
+                zhy:borderRadius="25dp"
+                zhy:type="round" />
 
             <TextView
                 android:id="@+id/name_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"  />
+                android:layout_marginLeft="10dp" />
 
             <TextView
                 android:id="@+id/time_tv"
@@ -36,13 +44,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:gravity="right"
-                android:textColor="#C6C6C6"  />
+                android:textColor="#C6C6C6" />
         </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#8888" />
 
         <include
             android:id="@+id/rating_bar"
@@ -63,35 +66,31 @@
             android:layout_marginLeft="15dp"
             android:layout_marginRight="20dp"
             android:orientation="horizontal"
-            android:visibility="gone" >
+            android:visibility="gone">
+
             <image.SmartImageView
                 android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"  />
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
             <image.SmartImageView
                 android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
-                android:layout_height="match_parent" />
+                android:layout_weight="1" />
+
             <image.SmartImageView
                 android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
-                android:layout_height="match_parent" />
+                android:layout_weight="1" />
+
             <image.SmartImageView
                 android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
-                android:layout_height="match_parent" />
+                android:layout_weight="1" />
         </LinearLayout>
-        <TextView
-            android:id="@+id/buytime_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="10dp"
-            android:textSize="12sp"
-            android:textColor="#C6C6C6" />
 
         <TextView
             android:id="@+id/buyversion_tv"
@@ -99,48 +98,60 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="12dp"
             android:layout_marginTop="2dp"
-            android:textSize="12sp"
-            android:textColor="#C6C6C6" />
+            android:textColor="#C6C6C6"
+            android:textSize="12sp" />
 
-        <View
-            android:layout_marginTop="40dp"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#F222" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal" >
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="6dp"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical">
 
             <TextView
-                android:id="@+id/lovecount_tv"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textSize="12sp"
-                android:gravity="center"
-                android:textColor="#F000"  />
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="#F222" />
+                android:id="@+id/buytime_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:textColor="#C6C6C6"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/subcomment_tv"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:textSize="12sp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textColor="#F000"  />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:text="11"
+                android:textColor="#F000"
+                android:textSize="12sp" />
 
-        </LinearLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#F222" />
+            <ImageView
+                android:id="@+id/img_replay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/subcomment_tv"
+                android:src="@mipmap/icon_replay" />
+
+            <TextView
+                android:id="@+id/lovecount_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/img_replay"
+                android:text="23"
+                android:textColor="#F000"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/lovecount_tv"
+                android:src="@mipmap/icon_givit" />
+        </RelativeLayout>
 
     </LinearLayout>
 

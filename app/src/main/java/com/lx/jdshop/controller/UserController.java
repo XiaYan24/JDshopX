@@ -1,5 +1,7 @@
 package com.lx.jdshop.controller;
 
+import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 
 
@@ -7,6 +9,7 @@ import com.alibaba.fastjson.JSON;
 import com.lx.jdshop.Bean.RResult;
 import com.lx.jdshop.DB.UserDao;
 import com.lx.jdshop.Listenter.IModeChaneListener;
+import com.lx.jdshop.MyApplication;
 import com.lx.jdshop.Util.AESUtils;
 import com.lx.jdshop.Util.NetworkUtil;
 import com.lx.jdshop.cons.IdiyMessage;
@@ -22,10 +25,17 @@ public class UserController extends BaseController {
 
     protected IModeChaneListener mListener;
     private UserDao userDao;
+    public long mUserId;
 
     public UserController(Context ctx) {
         super(ctx);
         userDao = new UserDao(mContext);
+        Activity mContext = (Activity) this.mContext;
+        MyApplication application = (MyApplication) mContext.getApplication();
+        if (application.mRLoginResult != null) {
+            mUserId = application.mRLoginResult.getId();
+        }
+
     }
 
     public void setIModeChangeListener(IModeChaneListener Listener) {
@@ -54,7 +64,7 @@ public class UserController extends BaseController {
                 break;
             case IdiyMessage.CLEAR_USER_ACTION:
                 ClearUser();
-                mListener.onModeChaned(IdiyMessage.CLEAR_USER_ACTION_RESULT,0);
+                mListener.onModeChaned(IdiyMessage.CLEAR_USER_ACTION_RESULT, 0);
                 break;
         }
     }

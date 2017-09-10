@@ -8,8 +8,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
+import com.bumptech.glide.Glide;
 import com.lx.jdshop.Bean.RProductComment;
 import com.lx.jdshop.R;
+import com.lx.jdshop.UI.RoundImageView;
 import com.lx.jdshop.Util.RatingBar;
 import com.lx.jdshop.cons.NetworkConst;
 
@@ -26,8 +28,9 @@ public class CommentAdapter extends JDBaseAdapter<RProductComment> {
     public CommentAdapter(Context c) {
         super(c);
     }
-    class ViewHolder{
-        SmartImageView userIconIv;
+
+    class ViewHolder {
+        RoundImageView userIconIv;
         TextView userNameTv;
         TextView commentTimeTv;
         RatingBar commentLevelRb;
@@ -38,40 +41,41 @@ public class CommentAdapter extends JDBaseAdapter<RProductComment> {
         TextView lovecountTv;
         TextView subcommentTv;
     }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holer=null;
-        if (convertView==null) {
-            convertView=mInflater.inflate(R.layout.comment_item_view, parent,false);
-            holer=new ViewHolder();
-            holer.userIconIv=(SmartImageView) convertView.findViewById(R.id.icon_iv);
-            holer.userNameTv=(TextView) convertView.findViewById(R.id.name_tv);
-            holer.commentTimeTv=(TextView) convertView.findViewById(R.id.time_tv);
-            holer.commentLevelRb=(RatingBar) convertView.findViewById(R.id.rating_bar);
-            holer.commentTv=(TextView) convertView.findViewById(R.id.content_tv);
-            holer.buyTimeTv=(TextView) convertView.findViewById(R.id.buytime_tv);
-            holer.buyVersionTv=(TextView) convertView.findViewById(R.id.buyversion_tv);
-            holer.imageContainerLl=(LinearLayout) convertView.findViewById(R.id.iamges_container);
-            holer.lovecountTv=(TextView) convertView.findViewById(R.id.lovecount_tv);
-            holer.subcommentTv=(TextView) convertView.findViewById(R.id.subcomment_tv);
+        ViewHolder holer = null;
+        if (convertView == null) {
+            convertView = mInflater.inflate(R.layout.comment_item_view, parent, false);
+            holer = new ViewHolder();
+            holer.userIconIv = (RoundImageView) convertView.findViewById(R.id.icon_iv);
+            holer.userNameTv = (TextView) convertView.findViewById(R.id.name_tv);
+            holer.commentTimeTv = (TextView) convertView.findViewById(R.id.time_tv);
+            holer.commentLevelRb = (RatingBar) convertView.findViewById(R.id.rating_bar);
+            holer.commentTv = (TextView) convertView.findViewById(R.id.content_tv);
+            holer.buyTimeTv = (TextView) convertView.findViewById(R.id.buytime_tv);
+            holer.buyVersionTv = (TextView) convertView.findViewById(R.id.buyversion_tv);
+            holer.imageContainerLl = (LinearLayout) convertView.findViewById(R.id.iamges_container);
+            holer.lovecountTv = (TextView) convertView.findViewById(R.id.lovecount_tv);
+            holer.subcommentTv = (TextView) convertView.findViewById(R.id.subcomment_tv);
 
             convertView.setTag(holer);
-        }else {
-            holer=(ViewHolder) convertView.getTag();
+        } else {
+            holer = (ViewHolder) convertView.getTag();
         }
         RProductComment bean = mDatas.get(position);
-        holer.userIconIv.setImageUrl(NetworkConst.BASE_URL+bean.getUserImg());
+        Glide.with(mContext).load(NetworkConst.BASE_URL + bean.getUserImg()).placeholder(R.mipmap.ic_loading_22_s).into(holer.userIconIv);
         holer.userNameTv.setText(bean.getUserName());
         holer.commentTimeTv.setText(bean.getCommentTime());
         holer.commentLevelRb.setRating(bean.getRate());
         holer.commentTv.setText(bean.getComment());
-        holer.buyTimeTv.setText("购买时间:"+bean.getBuyTime());
-        holer.buyVersionTv.setText("型号:"+bean.getProductType());
+        holer.buyTimeTv.setText("购买时间:" + bean.getBuyTime());
+        holer.buyVersionTv.setText("型号:" + bean.getProductType());
 
         initImageContainer(holer.imageContainerLl, bean.getImgUrls());
 
-        holer.lovecountTv.setText("喜欢("+bean.getLoveCount()+")");
-        holer.subcommentTv.setText("回复("+bean.getSubComment()+")");
+        holer.lovecountTv.setText("喜欢(" + bean.getLoveCount() + ")");
+        holer.subcommentTv.setText("回复(" + bean.getSubComment() + ")");
 
         return convertView;
     }

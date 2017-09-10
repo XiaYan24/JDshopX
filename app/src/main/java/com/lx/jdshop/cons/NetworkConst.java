@@ -33,4 +33,18 @@ public class NetworkConst {
     public static final String COMMENTCOUNT_URL=BASE_URL+"/commentCount";
 
     public static final String COMMENTDETAIL_URL=BASE_URL+"/commentDetail";
+
+    public static final String TOSHOPCAR_URL=BASE_URL+"/toShopCar";
+
+    public static final String SHOPCAR_URL=BASE_URL+"/shopCar";
+
+    public static final String DELSHOPCAR_URL=BASE_URL+"/delShopCar";
+
+    public static final String RECEIVEADDRESS_URL=BASE_URL+"/receiveAddress";
+
+    public static final String PROVINCE_URL=BASE_URL+"/province";
+
+    public static final String CITY_URL=BASE_URL+"/city";
+
+    public static final String AREA_URL=BASE_URL+"/area";
 }

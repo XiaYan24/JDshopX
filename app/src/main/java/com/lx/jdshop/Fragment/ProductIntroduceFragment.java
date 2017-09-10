@@ -6,15 +6,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.alibaba.fastjson.JSON;
 import com.lx.jdshop.Activity.ProductDetailsActivity;
+import com.lx.jdshop.Adapter.GoodCommentAdapter;
 import com.lx.jdshop.Adapter.ProductAdAdapter;
 import com.lx.jdshop.Adapter.TypeListAdapter;
 import com.lx.jdshop.Bean.RProductInfo;
+import com.lx.jdshop.Listenter.INumberInputListener;
 import com.lx.jdshop.R;
 import com.lx.jdshop.UI.NumberInputView;
 import com.lx.jdshop.Util.FixedViewUtil;
@@ -29,7 +32,7 @@ import java.util.TimerTask;
  * Created by Xia_焱 on 2017/7/25.
  */
 
-public class ProductIntroduceFragment extends BaseFragment implements AdapterView.OnItemClickListener {
+public class ProductIntroduceFragment extends BaseFragment implements AdapterView.OnItemClickListener, INumberInputListener {
     private ViewPager mAdVp;
     private ProductAdAdapter mAdAdapter;
     private ProductDetailsController mController;
@@ -44,6 +47,8 @@ public class ProductIntroduceFragment extends BaseFragment implements AdapterVie
     private GridView mTypeListLv;
     private TypeListAdapter mTypeListAdapter;
     private NumberInputView mNumberInputView;
+    private ListView mGoodCommentLv;
+    private GoodCommentAdapter mGoodCommentAdapter;
 
     @Override
     protected void handlerMessage(Message msg) {
@@ -87,10 +92,10 @@ public class ProductIntroduceFragment extends BaseFragment implements AdapterVie
         mTypeListLv.setAdapter(mTypeListAdapter);
         mTypeListLv.setOnItemClickListener(this);
         mNumberInputView = (NumberInputView) view.findViewById(R.id.number_input_et);
-
-//        mGoodCommentLv = (ListView) view.findViewById(R.id.good_comment_lv);
-//        mGoodCommentAdapter = new GoodCommentAdapter(getActivity());
-//        mGoodCommentLv.setAdapter(mGoodCommentAdapter);
+        mNumberInputView.setListener(this);
+        mGoodCommentLv = (ListView) view.findViewById(R.id.good_comment_lv);
+        mGoodCommentAdapter = new GoodCommentAdapter(getActivity());
+        mGoodCommentLv.setAdapter(mGoodCommentAdapter);
     }
 
     private void handleProductInfo(Object obj) {
@@ -175,5 +180,14 @@ public class ProductIntroduceFragment extends BaseFragment implements AdapterVie
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         mTypeListAdapter.mCurrentTabPosition = position;
         mTypeListAdapter.notifyDataSetChanged();
+        //获取选中的item 数据源
+        String data = (String) mTypeListAdapter.getItem(position);
+        mActivity.mProductVersion = data;
+    }
+
+    @Override
+    public void onTextChange(int num) {
+        //修改Activity中的数据
+        mActivity.mBuyCount = num;
     }
 }

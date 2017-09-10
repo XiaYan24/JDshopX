@@ -22,7 +22,7 @@ import java.util.List;
  * Created by Xia_焱 on 2017/7/25.
  */
 
-public class ProductDetailsController extends BaseController {
+public class ProductDetailsController extends UserController {
     public ProductDetailsController(Context ctx) {
         super(ctx);
     }
@@ -48,12 +48,12 @@ public class ProductDetailsController extends BaseController {
                 mListener
                         .onModeChaned(IdiyMessage.GET_COMMENT_ACTION_RESULT, dats);
                 break;
-//            case IdiyMessage.ADD2SHOPCAR_ACTION:
-//                RResult resultBean = add2shopcar((Long) values[0],
-//                        (Integer) values[1], (String) values[2]);
-//                mListener.onModeChaned(IdiyMessage.ADD2SHOPCAR_ACTION_RESULT,
-//                        resultBean);
-//                break;
+            case IdiyMessage.ADD2SHOPCAR_ACTION:
+                RResult resultBean = add2shopcar((Long) values[0],
+                        (Integer) values[1], (String) values[2]);
+                mListener.onModeChaned(IdiyMessage.ADD2SHOPCAR_ACTION_RESULT,
+                        resultBean);
+                break;
         }
     }
 
@@ -66,15 +66,15 @@ public class ProductDetailsController extends BaseController {
         }
         return null;
     }
-//    private RResult add2shopcar(long pid, int buyCount, String pversion) {
-//        HashMap<String, String> params = new HashMap<String, String>();
-//        params.put("userId", mUserId + "");
-//        params.put("productId", pid + "");
-//        params.put("buyCount", buyCount + "");
-//        params.put("pversion", pversion);
-//        String jsonStr = NetworkUtil.doPost(NetworkConst.TOSHOPCAR_URL, params);
-//        return JSON.parseObject(jsonStr, RResult.class);
-//    }
+    private RResult add2shopcar(long pid, int buyCount, String pversion) {
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("userId", mUserId + "");
+        params.put("productId", pid + "");
+        params.put("buyCount", buyCount + "");
+        params.put("pversion", pversion);
+        String jsonStr = NetworkUtil.doPost(NetworkConst.TOSHOPCAR_URL, params);
+        return JSON.parseObject(jsonStr, RResult.class);
+    }
 
     private List<RProductComment> loadComment(long pid, int type) {
         HashMap<String, String> params = new HashMap<String, String>();
