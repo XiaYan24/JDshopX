@@ -28,7 +28,18 @@ public class ShopCarController extends UserController {
             case IdiyMessage.SHOPCAR_LIST_ACTION:
                 mListener.onModeChaned(IdiyMessage.SHOPCAR_LIST_ACTION_RESULT, loadShopCarList());
                 break;
+            case IdiyMessage.DELET_SHOPCAR_ACTION:
+                RResult rResult = deleteShopCar((Long) values[0]);
+                mListener.onModeChaned(IdiyMessage.DELET_SHOPCAR_ACTION_RESULT,rResult);
+                break;
         }
+    }
+    private RResult deleteShopCar(long shopCarId){
+        HashMap<String, String> param = new HashMap<>();
+        param.put("userId", mUserId + "");
+        param.put("id",shopCarId+"");
+        String json = NetworkUtil.doPost(NetworkConst.DELSHOPCAR_URL, param);
+        return JSON.parseObject(json,RResult.class);
     }
 
     private List<RShopcar> loadShopCarList() {

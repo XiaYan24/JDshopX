@@ -28,28 +28,38 @@
         <!--主页-->
         <activity
             android:name=".Activity.HomeActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
-            android:launchMode="singleTask"/>
+            android:theme="@style/AppTheme" />
         <!--注册-->
-        <activity android:name=".Activity.RegisterActivity"
+        <activity
+            android:name=".Activity.RegisterActivity"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"
-            android:launchMode="singleTop"/>
+            android:theme="@style/AppTheme" />
         <!--设置-->
-        <activity android:name=".Activity.SettingActivity"
+        <activity
+            android:name=".Activity.SettingActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
         <!--商品列表页-->
-        <activity android:name=".Activity.ProductListActivity"
+        <activity
+            android:name=".Activity.ProductListActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
         <!--商品详情页-->
-        <activity android:name=".Activity.ProductDetailsActivity"
+        <activity
+            android:name=".Activity.ProductDetailsActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
+        <!--商品结算页-->
+        <activity
+            android:name=".Activity.SettleActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
