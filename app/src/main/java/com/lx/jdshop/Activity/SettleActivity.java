@@ -9,6 +9,7 @@ import com.lx.jdshop.R;
 public class SettleActivity extends BaseActivity {
     @Override
     protected void setContentView() {
+        //==ces
         setContentView(R.layout.activity_settle);
     }
 
